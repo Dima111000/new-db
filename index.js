@@ -1,6 +1,17 @@
 import express from 'express'
+import { Sequelize } from 'sequelize'
 
 const app = express()
+
+const sequelize = new Sequelize('test_db', 'postgres','qazqazqaz', {
+    dialect: 'postgres',
+    host: 'localhost',
+    port: '5432',
+    define: {
+        underscored: true
+    }
+})
+
 
 const port = 3000
 
